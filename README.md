@@ -19,7 +19,7 @@ ISS (ZARYA)
 You can install the TLE Parser package via npm:
 
 ```bash
-npm install tle-parser
+npm install tledecoder
 ```
 
 ## Usage
