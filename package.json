@@ -1,0 +1,20 @@
+{
+  "name": "tleparser",
+  "version": "0.5.1",
+  "description": "Parse TLE (Two Line Element) data.",
+  "main": "TLEParser.js",
+  "preferGlobal": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "satellite",
+    "tle",
+    "parser",
+    "backend",
+    "math"
+  ],
+  "type": "module",
+  "author": "@kokosnotfound",
+  "license": "MIT"
+}
