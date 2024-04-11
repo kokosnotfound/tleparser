@@ -11,6 +11,10 @@ export default class TLEParser {
     constructor (TLEString) {
         this.TLEString = TLEString;
         this.lines = TLEString.trim().split('\n');
+
+        if (this.lines.length % 3 !== 0) {
+            throw new Error("Invalid TLE string");
+        }
     }
 
     #parseEpoch(epochString) {
@@ -22,7 +26,7 @@ export default class TLEParser {
 
     /**
      * Parse the TLE string into an array of objects
-     * @param {Boolean} toJSON stringify result to JSON output
+     * @param  {Boolean} toJSON stringify result to JSON output
      * @returns {String} OBJECT_NAME Satellite name
      * @returns {Number} SATELLITE_CATALOG_NUMBER NORAD catalog number
      * @returns {String} EPOCH Date of the epoch
@@ -52,6 +56,10 @@ export default class TLEParser {
             const name = this.lines[i].trim();
             const line1 = this.lines[i + 1];
             const line2 = this.lines[i + 2];
+
+            if (line1.length !== 69 || line2.length !== 69) {
+                throw new Error("Invalid TLE string. Line 1 and Line 2 must be 69 characters long.");
+            }
 
             const satellite = {
                 OBJECT_NAME: name,
